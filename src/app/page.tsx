@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import { productsData } from "@/constants/data";
+import { cn } from "../lib/utils";
 
 export default function Home() {
   function handleBuy(product: string) {
@@ -26,27 +27,30 @@ export default function Home() {
     <div className="flex min-h-[100dvh] flex-col ">
       <Header />
       <main className="flex-1">
-        <section className="w-full pt-12 md:pt-24 lg:pt-32">
+        <section className="w-full pt-12 md:pt-24 lg:pt-32 flex flex-col items-center justify-center">
           <div className="flex justify-center items-center flex-col gap-y-4">
-            <div>
-              <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                Registre momentos com{" "}
-                <span className="text-primary">Memórias Impressas</span>
-              </h1>
-            </div>
+            <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] text-center">
+              Registre momentos com{" "}
+              <span className="text-primary">Memórias Impressas</span>
+            </h1>
 
-            <p>
+            <p className="text-center">
               Conosco você pode registrar todos os seus momentos especiais, com
               alta qualidade e em poucos dias você já poderá usufruir de uma
               lembrança impecável.
             </p>
 
-            <Button className="rounded-xl">Ver nosso Catálogo</Button>
+            <a
+              className={cn("rounded-xl bg-primary text-white px-4 py-2")}
+              href="#catalogo"
+            >
+              Ver nosso Catálogo
+            </a>
 
             <img
               src="/caneca1.jpg"
               alt="Hero"
-              className="overflow-hidden rounded-t-xl object-fill pb-24 w-1/5 h-1/3"
+              className="overflow-hidden rounded-t-xl object-fill pb-24 w-2/3  lg:w-1/3"
             />
           </div>
         </section>
