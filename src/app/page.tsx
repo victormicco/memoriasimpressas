@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import { productsData } from "@/constants/data";
 import { cn } from "../lib/utils";
+import Footer from "../components/footer";
 
 export default function Home() {
   function handleBuy(product: string) {
@@ -75,7 +76,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12"
+              className=" grid max-w-full items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12"
               id="catalogo"
             >
               {products.map((product) => (
@@ -88,9 +89,9 @@ export default function Home() {
                     <Image
                       src={product.image ?? "/caneca-branca.jpg"}
                       alt={product.name}
-                      width={200}
+                      width={350}
                       height={200}
-                      className="rounded-xl object-fill h-2/3"
+                      className="rounded-xl object-fill h-3/3"
                     />
                   </CardContent>
                   <CardFooter className="flex flex-col items-center justify-center gap-4">
@@ -108,6 +109,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
